@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 25px 50px;
+
+  &__logo {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 38px;
+  }
+}

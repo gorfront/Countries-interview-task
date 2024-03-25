@@ -1,0 +1,21 @@
+.footer--links {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+  font-family: "Poppins";
+  cursor: pointer;
+  position: relative;
+
+  &:first-child::before {
+    content: "©";
+    position: absolute;
+    left: -25px;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .footer--links:first-child {
+    left: 25px;
+  }
+}

@@ -1,0 +1,11 @@
+.main_diagram {
+  border-radius: 20px;
+  background: rgb(51, 51, 51);
+  max-width: 500px;
+  max-height: 446px;
+  min-width: 335px;
+
+  & > img {
+    width: 100%;
+  }
+}
