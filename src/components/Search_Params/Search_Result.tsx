@@ -7,7 +7,7 @@ import "./Search_Result.scss";
 import { IValue } from "../Home/Home";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchCurrentCountry } from "../../store/slices/currentCountry/currentCountryAPI";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { clearSearchInput } from "../../store/slices/search/searchSlice";
 
 const Search_Result: React.FC<IValue> = ({ setCountry }) => {
@@ -15,6 +15,8 @@ const Search_Result: React.FC<IValue> = ({ setCountry }) => {
   const dispatch = useAppDispatch();
   const countries = useAppSelector(selectCountries);
   const searchInput = useAppSelector((state) => state.searchInput.value);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchCountries());
@@ -46,9 +48,10 @@ const Search_Result: React.FC<IValue> = ({ setCountry }) => {
               setCurrentCountry(country);
               handleInputClear();
               setCountry(country);
+              navigate(`/country=${country}`);
             }}
           >
-            <NavLink to="/country">{country}</NavLink>
+            <NavLink to="">{country}</NavLink>
           </li>
         ))
       ) : (

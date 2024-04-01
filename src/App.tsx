@@ -11,6 +11,8 @@ export interface ICountry {
 const App = () => {
   const [country, setCountry] = useState("");
 
+  const urlCountryName = `country=${country}`;
+
   return (
     <>
       <Routes>
@@ -18,7 +20,7 @@ const App = () => {
           <Route index element={<Home {...{ setCountry }} />} />
 
           <Route
-            path="country"
+            path={urlCountryName}
             element={<About {...{ country, setCountry }} />}
           />
         </Route>
